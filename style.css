@@ -51,6 +51,34 @@ body {
     background-color: #eee; /* Warna dasar jika foto gagal dimuat */
 }
 
+/* Bagian Hobi */
+.hobbies-section {
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.hobbies-section h2 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.hobbies-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.hobby-tag {
+    background-color: #eef5fe; 
+    color: #4a90e2;            
+    padding: 8px 16px;         
+    border-radius: 20px;       
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #d0e4ff; 
+}
+
 h1 {
     color: #2c3e50;
     font-size: 28px;
