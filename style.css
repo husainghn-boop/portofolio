@@ -51,7 +51,7 @@ body {
     background-color: #eee; /* Warna dasar jika foto gagal dimuat */
 }
 
-/* Bagian Hobi */
+/* --- Tambahan untuk Bagian Hobi --- */
 .hobbies-section {
     margin-bottom: 35px;
     text-align: left;
@@ -70,13 +70,13 @@ body {
 }
 
 .hobby-tag {
-    background-color: #eef5fe; 
-    color: #4a90e2;            
-    padding: 8px 16px;         
-    border-radius: 20px;       
+    background-color: #eef5fe; /* Latar belakang biru sangat pucat */
+    color: #4a90e2;            /* Teks biru cerah */
+    padding: 8px 16px;         /* Ukuran kotak hobi */
+    border-radius: 20px;       /* Melengkungkan sudut kotak hobi */
     font-size: 14px;
     font-weight: 600;
-    border: 1px solid #d0e4ff; 
+    border: 1px solid #d0e4ff; /* Bingkai tipis */
 }
 
 h1 {
