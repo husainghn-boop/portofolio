@@ -1,0 +1,120 @@
+/* Mengatur ulang margin dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Mengatur latar belakang halaman */
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Kotak profil utama */
+.container {
+    background-color: #ffffff;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    text-align: center;
+}
+
+/* Header (Foto, Nama, Prodi) */
+.profile-header {
+    margin-bottom: 30px;
+}
+
+/* Perubahan Besar di Sini untuk Mengatur Foto */
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%; /* Membuat lingkaran sempurna */
+    margin: 0 auto 20px;
+    display: block;
+    
+    /* Perawatan foto agar tidak gepeng */
+    object-fit: cover; 
+    object-position: center;
+    
+    /* Hiasan Bingkai */
+    border: 5px solid #ffffff;
+    /* box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3); */
+    background-color: #eee; /* Warna dasar jika foto gagal dimuat */
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #4a90e2;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Bagian Deskripsi */
+.profile-info {
+    margin-bottom: 35px;
+    text-align: left;
+    background-color: #f9fbfd;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.profile-info h2 {
+    font-size: 19px;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.profile-info p {
+    line-height: 1.7;
+    color: #555;
+    font-size: 15px;
+}
+
+/* Tombol Sosial Media */
+.social-media h2 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 18px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* .btn:hover {
+    background-color: #ffffff;
+    color: #4a90e2;
+    border: 2px solid #4a90e2;
+    transform: translateY(-3px);
+} */
