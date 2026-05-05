@@ -1,69 +1,90 @@
-/* Mengatur ulang margin dasar */
+/*VARIABEL WARNA (Mendukung Dark Mode)*/
+:root {
+    --bg-color: #f0f4f8; /* Latar belakang asli */
+    --card-bg: #ffffff; /* Warna kartu asli */
+    --text-color: #333333;
+    --accent-color: #4a90e2; /* Warna biru asli */
+    --info-bg: #f9fbfd; /* Latar belakang kotak "Tentang Saya" asli */
+    --border-color: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Warna untuk Mode Gelap */
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg: #1e1e2e;
+    --text-color: #f1f5f9;
+    --accent-color: #60a5fa;
+    --info-bg: #2a2a3c;
+    --border-color: #334155;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/*RESET & LAYOUT DASAR*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Mengatur latar belakang halaman */
 body {
-    background-color: #f0f4f8;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
 }
 
-/* Kotak profil utama */
+/* Mengatur lebar konten agar rapi di tengah */
 .container {
-    background-color: #ffffff;
-    max-width: 420px;
-    width: 100%;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    padding: 50px 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*NAVBAR & TOMBOL TEMA*/
+nav {
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.btn-theme {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/*KARTU PROFIL (Tampilan Asli)*/
+/*Kita gabungkan header, info, dan social menjadi satu bentuk kartu */
+.profile-header {
+    background-color: var(--card-bg);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 40px 30px 10px;
     text-align: center;
 }
 
-/* Header (Foto, Nama, Prodi) */
-.profile-header {
-    margin-bottom: 30px;
-}
-
-/* Perubahan Besar di Sini untuk Mengatur Foto */
-.profile-img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%; 
-    margin: 0 auto 20px;
-    display: block;
-    
-    /* Perawatan foto agar tidak gepeng */
-    object-fit: cover; 
-    object-position: center;
-    
-    /* Hiasan Bingkai */
-    border: 5px solid #ffffff;
-    /* box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3); */
-    background-color: #eee; 
-}
-
-/* Bagian Hobi */
-.hobbies-section {
-    margin-bottom: 35px;
-    text-align: left;
-    background-color: #f9fbfd; 
-    padding: 20px;           
-    border-radius: 15px;     
-}
-
-.hobbies-section h2 {
-    font-size: 19px; 
-    color: #2c3e50;
-    margin-bottom: 15px;
+.profile-info {
+    background-color: var(--card-bg);
+    padding: 10px 30px;
 }
 
 .hobbies-list {
@@ -82,47 +103,62 @@ body {
     border: 1px solid #d0e4ff; 
 }
 
+.social-media {
+    background-color: var(--card-bg);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 10px 30px 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+/* Foto Profil Asli */
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border: 5px solid var(--bg-color); /* Memberi efek bingkai */
+    background-color: #eee;
+}
+
 h1 {
-    color: #2c3e50;
     font-size: 28px;
     margin-bottom: 5px;
 }
 
 .subtitle {
-    color: #4a90e2;
+    color: var(--accent-color);
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
-/* Bagian Deskripsi */
-.profile-info {
-    margin-bottom: 35px;
-    text-align: left;
-    background-color: #f9fbfd;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.profile-info h2 {
+/* Kotak Deskripsi Tentang Saya */
+.profile-info h2, .social-media h2 {
     font-size: 19px;
-    color: #2c3e50;
     margin-bottom: 12px;
+    text-align: left;
 }
 
-.profile-info p {
-    line-height: 1.7;
-    color: #555;
-    font-size: 15px;
-}
-
-/* Tombol Sosial Media */
 .social-media h2 {
-    font-size: 18px;
-    color: #2c3e50;
+    text-align: center;
     margin-bottom: 18px;
 }
 
+.profile-info p {
+    background-color: var(--info-bg);
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+/* Tombol Sosial Media */
 .links {
     display: flex;
     justify-content: center;
@@ -133,19 +169,79 @@ h1 {
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #4a90e2;
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
     border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
 }
 
-.btn:hover {
-    background-color: #ffffff;
-    color: #4a90e2;
-    border: 2px solid #4a90e2;
-    transform: translateY(-3px);
+/*FORMULIR KONTAK*/
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-wrapper {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px var(--shadow-color);
+    margin-bottom: 40px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 30px; /* Seragam dengan tombol sosial media */
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.status-msg {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0 40px;
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
